@@ -36,6 +36,21 @@ func NewBTree() (btree *BTree) {
 	return
 }
 
+// Value : return node.value
+func (node *Node) Value() NodeValue {
+	return node.value
+}
+
+// Item : return node.item
+func (node *Node) Item() Item {
+	return node.item
+}
+
+// SetItem : change node.item
+func (node *Node) SetItem(item *Item) {
+	node.item = item
+}
+
 // Add : add a new node to binary tree
 func (bt *BTree) Add(value NodeValue, item Item) {
 	var node Node = Node{value: value, item: item}
