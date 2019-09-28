@@ -1,3 +1,3 @@
-module adt/v0.0.1
+module adt
 
 go 1.13
