@@ -105,7 +105,7 @@ func (bt *BTree) Unlink(un *Node) (unlink *Node) {
 		// 解除链接的点，左右子树指针置为 nil
 		unlink.left, unlink.right = nil, nil
 		// fmt.Printf("unlink-node=%d, left=%+v,right=%+v,pos=%d\n", unlink.value, unlink.left, unlink.right, unlink.pos)
-		bt.Len-- // @todo: Unlink节点会导致Len不准确(case3)
+		bt.Len-- // fixed: Unlink节点会导致Len不准确(case3)
 	}()
 	// leftTreeRoot, RightTreeRoot, unlinkedNodePosition
 	left, right, pos := unlink.left, unlink.right, unlink.pos
@@ -147,6 +147,7 @@ func (bt *BTree) Unlink(un *Node) (unlink *Node) {
 		// 6. link "nodeLN" and RightChildTree (right side)
 		link(nodeLN, right, 2)
 		node = nodeLN
+		bt.Len++ // 因为 node重新接回树上，需要自增树的Size
 	}
 
 	// ------------------------
