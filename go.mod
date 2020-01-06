@@ -1,3 +1,3 @@
-module github.com/s654632396/mpkg
+module mpkg
 
 go 1.13
