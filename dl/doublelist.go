@@ -1,4 +1,4 @@
-package doublelist
+package dl
 
 import (
 	"errors"

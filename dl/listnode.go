@@ -1,4 +1,4 @@
-package doublelist
+package dl
 
 type ListNode struct {
 	value string
