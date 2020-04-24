@@ -12,7 +12,7 @@ import (
 // 容量测试
 func BenchmarkHashMap_Store(b *testing.B) {
 	hm := NewHashMap(0)
-	for i := 1; i <= 10000; i++ {
+	for i := 1; i <= 1000000; i++ {
 		_ = hm.Store("key"+string(i), "value"+string(i))
 	}
 	log.Println(fmt.Sprintf("Hash Map expending capacity to %d", hm.cap))

@@ -16,6 +16,9 @@ const (
 	DefaultCap uint64 = 1 << 4
 )
 
+
+
+
 type item struct {
 	key   string      // 原生key
 	value interface{} // 节点存储值
@@ -49,7 +52,7 @@ func NewHashMap(cap uint64) (hm *HashMap) {
 
 //extend capacity
 func (hm *HashMap) extend() (error error) {
-	//defer runtime.GC()
+	// defer runtime.GC()
 	// lock by channel
 	hm.waitCh, hm.wait = make(chan int, 1), true
 
