@@ -1,4 +1,4 @@
-module github.com/s654632396/mpkg
+module github.com/s654632396/mpkg/hashmap
 
 go 1.13
 
